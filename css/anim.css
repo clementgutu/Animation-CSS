@@ -1,0 +1,282 @@
+/* reset */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,400&display=swap');
+
+html{
+    font-size: 62.5%;              /*16px    * 62.5% = 1.000*/
+    scroll-behavior: smooth;       /* animer les lien  ajouter */
+    overflow-x: hidden;
+      /* par rapport a kanimation h1  qui grandit */
+}
+
+body{
+    font: 1.6rem 'Open Sans',sans-serif;
+    margin: 0;
+    /* animation: color_screen 10s linear infinite alternate; */
+}
+@keyframes color_screen{
+    0%{
+        background-color: #fff;
+    }
+   20%{
+        background-color: #222;
+    }
+    30%{
+        background-color: rgb(72, 61, 230);
+    }
+    60%{
+        background-color: rgb(239, 14, 14);
+    }
+    100%{
+        background-color: #fff;
+    }
+}
+h1,
+h2,
+h3,p,ul,ol,figure{
+    margin: 0;
+    list-style: none;
+    padding:0;
+    font-weight: 300;
+}
+*{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none; /* enlever les deco des liens*/
+    color: #222;
+}
+img{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;       /* proprieter importante */
+}
+button{
+    background: transparent;
+    border: 0;
+    font-size: inherit;
+}
+
+
+*{
+    box-sizing:  border-box;       /*  ajuster la taille   */
+}
+
+
+
+
+/* theme */
+:root{
+    --bg-color-theme: #222;
+}
+header{
+    background-color: var(--bg-color-theme);
+}
+header h1{
+    line-height: 7.0rem;
+    text-align: center;
+    color: #fff;
+    animation: texte .5s linear 5 alternate;
+    transform-origin: center center;
+}
+
+@keyframes texte{
+    from{
+        opacity: 0;
+        transform: scale(2.0);
+        
+        color: rgb(255, 0, 0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+       
+        color: #fff;
+    }
+    
+}
+
+.anim{
+    position: fixed;
+    width: 50rem;
+    height: 50rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    z-index: 1;
+}
+.anim .wheel_1, :is(.wheel_2){
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    z-index: 2;
+}
+.anim .wheel_1{
+    top: 1rem;
+    left: 1rem;
+    animation: wheel_1 5s linear infinite;
+
+}
+.anim .wheel_2{
+    top: 7rem;
+    left: 12rem;
+    animation: wheel_2 5s linear infinite;
+}
+main{
+    max-width: 90rem;
+    margin: 5rem auto;
+    padding: .5rem 0 0 .5rem;
+   
+  
+    
+}
+main figure{
+    display: inline-block;
+    width: calc(100% / 3 - .5rem);
+    vertical-align: middle;
+    text-align: center; 
+
+}
+main figure:nth-child(2){
+    margin: 0 .5rem;
+}
+main figure figcaption h2{
+    font-size: large;
+    background-color: #ccc;
+    line-height: 4.5rem;
+    margin: 1rem 0 .5rem 0;
+}
+main figure img{
+    width: 50%;
+    height: 50%;
+}
+/* footer */
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--bg-color-theme);
+    width: 100%;
+    line-height: 7.0rem;
+    text-align: center;
+    color: #fff;
+}
+/* 
+animation keyframes
+*/
+@keyframes wheel_1{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes wheel_2{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-360deg);
+    }
+}
+
+/* animation weel */
+figure .logo-1{
+    animation: logo_1 6s linear infinite;
+    animation-delay: 5s;
+}
+
+figure:hover .logo-1{
+    animation-play-state: paused;
+}
+
+@keyframes logo_1{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+figure .logo-2{
+    animation: logo_2 1s linear 8 alternate;
+    animation-delay: 10s;
+}
+@keyframes logo_2{
+    0%{
+        transform: scale(1);
+    }
+    20%{
+        transform: scale(2);
+        opacity: .5;
+    }
+    40%{
+        transform: rotate(-360deg);
+        opacity: .8;
+    }
+    60%{
+        transform: translateY(-4rem);
+        opacity: 1;
+    }
+    70%{
+        transform: rotate(360deg);
+    }
+}
+
+figure .logo-3{
+    animation: logo_3 1s linear infinite alternate;
+    animation-delay: 15s;
+}
+@keyframes logo_3 {
+    0%{
+        transform: skew(20deg, 20deg);
+    }
+    20%{
+        transform: skew(-20deg, -20deg);
+    }
+    30%{
+        transform: skew(-20deg, -20deg);
+    }
+    40%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(-360deg);
+    }
+    60%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+    
+}
+
+main button{
+    display: block;
+    width: 30%;
+    margin: 2rem  auto 0;
+    text-align: center;
+    line-height: 6rem;
+    border: solid .1rem rgb(168, 167, 167);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+main button:hover{
+    animation: button_anim 0.3s linear 5 alternate; 
+}
+@keyframes button_anim {
+    from{
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    to{
+        transform: scaleX(2);
+        letter-spacing: .5rem;
+        opacity: 0.2;
+    }
+}
